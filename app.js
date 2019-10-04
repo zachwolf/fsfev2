@@ -8,12 +8,12 @@ const wss = new WebSocketServer({ server });
 const port = 4000;
 
 // Serve js files
-app.use('/js', express.static(path.join(__dirname, 'ui/js/')));
+app.use('/chat/js', express.static(path.join(__dirname, 'ui/js/')));
 // Serve css files
-app.use('/css', express.static(path.join(__dirname, 'ui/css/')));
+app.use('/chat/css', express.static(path.join(__dirname, 'ui/css/')));
 
 
-app.get('/', (req, res) => {
+app.get('/chat', (req, res) => {
     res.sendFile(path.join(__dirname + '/ui/html/index.html'));
 });
 
